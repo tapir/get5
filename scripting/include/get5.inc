@@ -69,21 +69,15 @@ methodmap Get5Player < JSON_Object {
     }
 
     public bool IsEqualToPlayerId(const char[] id) {
-
         char ownId[64];
         this.GetSteamId(ownId, sizeof(ownId));
-
         return StrEqual(ownId, id);
-
     }
 
     public bool IsEqualToPlayer(const Get5Player player) {
-
         char playerId[64];
         player.GetSteamId(playerId, sizeof(playerId));
-
         return this.IsEqualToPlayerId(playerId);
-
     }
 }
 
