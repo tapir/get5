@@ -274,7 +274,7 @@ public Action Timer_PauseTimeCheck(Handle timer, int data) {
   }
   if (timeLeft <= 0) {
     Get5_MessageToAll("%t", "PauseRunoutInfoMessage", g_FormattedTeamNames[team]);
-    Unpause();
+    UnpauseGame(team);
     return Plugin_Stop;
   }
 
@@ -309,7 +309,7 @@ public Action Command_Unpause(int client, int args) {
 
   if (g_InExtendedPause && g_MaxTechPauseTime.IntValue > 0) {
     if (g_TechPausedTimeOverride[pausedTeam] >= g_MaxTechPauseTime.IntValue) {
-      Unpause(team);
+      UnpauseGame(team);
       if (IsPlayer(client)) {
         Get5_MessageToAll("%t", "MatchUnpauseInfoMessage", client);
       }
