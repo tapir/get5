@@ -14,7 +14,7 @@ public bool PauseGame(MatchTeam team, PauseType type) {
 
     EventLogger_LogAndDeleteEvent(event);
 
-    if (PauseType == PauseType_Tech) {
+    if (type == PauseType_Tech) {
         return Pause();
     } else {
         return Pause(g_FixedPauseTimeCvar.IntValue, MatchTeamToCSTeam(team));
